@@ -8,3 +8,12 @@ export async function postTransactions(data) {
     throw error;
   }
 }
+
+export async function getTransactions() {
+  try {
+    const response = await api.get("/transactions");
+    return response.data.payload;
+  } catch (error) {
+    throw error;
+  }
+}

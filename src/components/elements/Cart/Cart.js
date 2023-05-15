@@ -106,6 +106,7 @@ const Cart = () => {
         console.log(err);
       })
       .finally(() => {
+        setAmountPaid("")
         carts.splice(0, carts.length);
       });
   };
