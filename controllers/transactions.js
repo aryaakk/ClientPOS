@@ -2,7 +2,7 @@ const db = require("../configs/database");
 
 exports.fetchTransaction = async () => {
   const query = await db.query(
-    "SELECT * FROM transactions AS t INNER JOIN transaction_detail AS i ON t.no_order = i.no_order LEFT JOIN products AS p ON i.id_product = p.id"
+    "SELECT * FROM transactions AS t INNER JOIN transaction_detail AS i ON t.no_order = i.no_order LEFT JOIN products AS p ON i.id_product = p.id ORDER BY t.id DESC"
   );
 
   if (!query.error) {
